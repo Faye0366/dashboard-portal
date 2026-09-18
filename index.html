@@ -33,17 +33,32 @@
   .card-body { padding: 22px 24px 26px; flex: 1; display: flex; flex-direction: column; }
   .card-title { font-size: 19px; font-weight: 700; color: #2c3e50; }
   .card-desc { margin-top: 6px; font-size: 13px; color: #95a3b3; min-height: 34px; }
-  .links { margin-top: 18px; display: flex; flex-direction: column; gap: 10px; }
+  .links {
+    margin-top: 18px;
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;
+  }
   .link-btn {
     display: flex; align-items: center; justify-content: space-between;
-    padding: 11px 16px; border-radius: 9px; background: #f4f7fb;
-    color: #34495e; text-decoration: none; font-size: 14px; font-weight: 600;
-    transition: background 0.18s, color 0.18s;
+    min-height: 60px; padding: 12px 14px;
+    border-radius: 10px; background: #f4f7fb;
+    border: 1px solid #e8eef6; border-left: 4px solid var(--accent, #667eea);
+    color: #34495e; text-decoration: none;
+    font-size: 15px; font-weight: 600; line-height: 1.3;
+    transition: all 0.18s;
   }
-  .link-btn:hover { background: #e8eef6; }
-  .link-btn .arrow { color: #b0bccb; font-size: 13px; }
-  .link-btn:hover .arrow { color: #5b6b7e; }
+  .link-btn:hover {
+    background: var(--accent-soft, #eef1fb);
+    border-color: var(--accent, #667eea);
+    color: var(--accent, #667eea);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(52, 73, 94, 0.10);
+  }
+  .link-btn .arrow { color: #b0bccb; font-size: 14px; flex-shrink: 0; margin-left: 8px; }
+  .link-btn:hover .arrow { color: var(--accent, #667eea); }
   .footer { text-align: center; margin-top: 40px; color: #aab4c0; font-size: 12px; }
+  @media (max-width: 520px) {
+    .links { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
@@ -54,7 +69,7 @@
     </div>
     <div class="grid">
       <!-- 北京移动 -->
-      <div class="card">
+      <div class="card" style="--accent:#667eea; --accent-soft:#eef1fb;">
         <div class="card-accent" style="background:#667eea;"></div>
         <div class="card-body">
           <div class="card-title">北京移动业务数据看板</div>
@@ -68,7 +83,7 @@
         </div>
       </div>
       <!-- 陕西移动 -->
-      <div class="card">
+      <div class="card" style="--accent:#1f9e8f; --accent-soft:#e6f4f1;">
         <div class="card-accent" style="background:#1f9e8f;"></div>
         <div class="card-body">
           <div class="card-title">陕西移动业务数据看板</div>
@@ -80,7 +95,7 @@
         </div>
       </div>
       <!-- 退费渠道 -->
-      <div class="card">
+      <div class="card" style="--accent:#e08a3c; --accent-soft:#fbeee0;">
         <div class="card-accent" style="background:#e08a3c;"></div>
         <div class="card-body">
           <div class="card-title">退费渠道数据看板</div>
