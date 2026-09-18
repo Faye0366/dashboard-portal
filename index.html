@@ -35,16 +35,23 @@
   .card-desc { margin-top: 6px; font-size: 13px; color: #95a3b3; min-height: 34px; }
   .links {
     margin-top: 18px;
-    display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;
+    display: flex; flex-direction: column; gap: 12px;
   }
   .link-btn {
-    display: flex; align-items: center; justify-content: space-between;
-    min-height: 60px; padding: 12px 14px;
+    display: flex; align-items: center;
+    height: 50px; padding: 0 18px;
     border-radius: 10px; background: #f4f7fb;
     border: 1px solid #e8eef6; border-left: 4px solid var(--accent, #667eea);
     color: #34495e; text-decoration: none;
-    font-size: 15px; font-weight: 600; line-height: 1.3;
+    font-size: 22px; font-weight: 600; line-height: 1;
     transition: all 0.18s;
+  }
+  .link-btn .ico { font-size: 22px; margin-right: 12px; flex-shrink: 0; }
+  .link-btn .label {
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .link-btn .arrow {
+    margin-left: auto; color: #b0bccb; font-size: 18px; flex-shrink: 0; padding-left: 12px;
   }
   .link-btn:hover {
     background: var(--accent-soft, #eef1fb);
@@ -53,12 +60,8 @@
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(52, 73, 94, 0.10);
   }
-  .link-btn .arrow { color: #b0bccb; font-size: 14px; flex-shrink: 0; margin-left: 8px; }
   .link-btn:hover .arrow { color: var(--accent, #667eea); }
   .footer { text-align: center; margin-top: 40px; color: #aab4c0; font-size: 12px; }
-  @media (max-width: 520px) {
-    .links { grid-template-columns: 1fr; }
-  }
 </style>
 </head>
 <body>
@@ -75,10 +78,10 @@
           <div class="card-title">北京移动业务数据看板</div>
           <div class="card-desc">流量套餐 + 宽带业务数据</div>
           <div class="links">
-            <a class="link-btn" href="https://faye0366.github.io/beijing-dashboard/" target="_blank" rel="noopener">流量套餐看板 <span class="arrow">↗</span></a>
-            <a class="link-btn" href="https://faye0366.github.io/beijing-dashboard/compare.html" target="_blank" rel="noopener">流量套餐对比分析 <span class="arrow">↗</span></a>
-            <a class="link-btn" href="https://faye0366.github.io/beijing-dashboard/broadband.html" target="_blank" rel="noopener">宽带业务看板 <span class="arrow">↗</span></a>
-            <a class="link-btn" href="https://faye0366.github.io/beijing-dashboard/broadband_compare.html" target="_blank" rel="noopener">宽带对比分析 <span class="arrow">↗</span></a>
+            <a class="link-btn" href="https://faye0366.github.io/beijing-dashboard/" target="_blank" rel="noopener"><span class="ico">📊</span><span class="label">流量套餐看板</span><span class="arrow">↗</span></a>
+            <a class="link-btn" href="https://faye0366.github.io/beijing-dashboard/compare.html" target="_blank" rel="noopener"><span class="ico">🔍</span><span class="label">流量套餐对比分析</span><span class="arrow">↗</span></a>
+            <a class="link-btn" href="https://faye0366.github.io/beijing-dashboard/broadband.html" target="_blank" rel="noopener"><span class="ico">📶</span><span class="label">宽带业务看板</span><span class="arrow">↗</span></a>
+            <a class="link-btn" href="https://faye0366.github.io/beijing-dashboard/broadband_compare.html" target="_blank" rel="noopener"><span class="ico">🔎</span><span class="label">宽带对比分析</span><span class="arrow">↗</span></a>
           </div>
         </div>
       </div>
@@ -89,8 +92,8 @@
           <div class="card-title">陕西移动业务数据看板</div>
           <div class="card-desc">流量套餐业务数据</div>
           <div class="links">
-            <a class="link-btn" href="https://faye0366.github.io/shaanxi-dashboard/" target="_blank" rel="noopener">流量套餐看板 <span class="arrow">↗</span></a>
-            <a class="link-btn" href="https://faye0366.github.io/shaanxi-dashboard/compare.html" target="_blank" rel="noopener">流量套餐对比分析 <span class="arrow">↗</span></a>
+            <a class="link-btn" href="https://faye0366.github.io/shaanxi-dashboard/" target="_blank" rel="noopener"><span class="ico">📊</span><span class="label">流量套餐看板</span><span class="arrow">↗</span></a>
+            <a class="link-btn" href="https://faye0366.github.io/shaanxi-dashboard/compare.html" target="_blank" rel="noopener"><span class="ico">🔍</span><span class="label">流量套餐对比分析</span><span class="arrow">↗</span></a>
           </div>
         </div>
       </div>
@@ -101,8 +104,8 @@
           <div class="card-title">退费渠道数据看板</div>
           <div class="card-desc">退费渠道业务数据</div>
           <div class="links">
-            <a class="link-btn" href="https://faye0366.github.io/refund-dashboard/" target="_blank" rel="noopener">渠道看板 <span class="arrow">↗</span></a>
-            <a class="link-btn" href="https://faye0366.github.io/refund-dashboard/compare.html" target="_blank" rel="noopener">渠道对比分析 <span class="arrow">↗</span></a>
+            <a class="link-btn" href="https://faye0366.github.io/refund-dashboard/" target="_blank" rel="noopener"><span class="ico">📊</span><span class="label">渠道看板</span><span class="arrow">↗</span></a>
+            <a class="link-btn" href="https://faye0366.github.io/refund-dashboard/compare.html" target="_blank" rel="noopener"><span class="ico">🔍</span><span class="label">渠道对比分析</span><span class="arrow">↗</span></a>
           </div>
         </div>
       </div>
